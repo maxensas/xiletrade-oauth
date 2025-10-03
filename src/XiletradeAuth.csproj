@@ -16,7 +16,7 @@
     <StripSymbols>true</StripSymbols>
     <BlazorLinkOnBuild>true</BlazorLinkOnBuild>
     <TrimmerDefaultAction>link</TrimmerDefaultAction>
-    <TrimMode>link</TrimMode>
+    <TrimMode>partial</TrimMode>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
     <!--<PublishTrimmed>true</PublishTrimmed>-->
     <!--
