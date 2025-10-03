@@ -25,7 +25,7 @@ jobs:
         run: dotnet restore ./src/XiletradeAuth.sln
 
       - name: 🧱 Build and publish Blazor app
-        run: dotnet publish ./src/XiletradeAuth.csproj -c Release -o build
+        run: dotnet publish ./src/XiletradeAuth.csproj -c Release -o build /p:BlazorEnableCompression=false /p:StaticWebAssetsBasePath=/xiletrade-oauth/
         
       - name: 🧹 Clean docs folder
         run: |
@@ -35,6 +35,8 @@ jobs:
       - name: 📁 Copy published files to docs/
         run: |
           cp -r build/wwwroot/* docs/
+          find docs/ -name "*.br" -delete
+          find docs/ -name "*.gz" -delete
           
       - name: Debug docs content
         run: |
