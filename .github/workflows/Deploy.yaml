@@ -37,16 +37,16 @@ jobs:
           cp -r build/wwwroot/* docs/
           find docs/ -name "*.br" -delete
           find docs/ -name "*.gz" -delete
-          
+
        - name: Add .nojekyll file to docs
          run: |
            touch docs/.nojekyll
-          
+
       - name: Debug docs content
         run: |
           echo "### docs content ###"
           ls -R docs
-      
+
       - name: 🛠 Fix <base href> in index.html
         run: |
           sed -i 's|<base href="/" />|<base href="/xiletrade-oauth/" />|' docs/index.html
