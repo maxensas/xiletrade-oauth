@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
+          
+      - name: 🗼 Install .NET WASM Build Tools
+        run: dotnet workload install wasm-tools
 
       - name: 📦 Restore dependencies
         run: dotnet restore ./src/XiletradeAuth.sln
@@ -38,11 +41,6 @@ jobs:
           find docs/ -name "*.br" -delete
           find docs/ -name "*.gz" -delete
           touch docs/.nojekyll
-
-      - name: Debug docs content
-        run: |
-          echo "### docs content ###"
-          ls -R docs
 
       - name: 🛠 Fix <base href> in index.html
         run: |
