@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "XiletradeAuth",
   "resources": {
-    "hash": "sha256-lmdS4dJ/F4tZm06XK44iekdBCOBmC4h5aJmTdtFlBpc=",
+    "hash": "sha256-1o640silwddZCFceOvfofqccff/Jiwap+aCv7hV428w=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.epshyxj6gl.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.36541auugm.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -33,23 +33,23 @@
       "System.Text.Json.coj5dfj14h.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.3ddyst6dmo.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.kunjf55uqp.wasm": "System.Private.CoreLib.wasm",
-      "XiletradeAuth.1a1l4z1pc6.wasm": "XiletradeAuth.wasm",
+      "XiletradeAuth.verwh3vhp9.wasm": "XiletradeAuth.wasm",
+      "dotnet.native.vmus01doem.js": "dotnet.native.js",
+      "dotnet.native.4e9wno4pqn.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
-      "dotnet.native.9ih887ebfz.js": "dotnet.native.js",
-      "dotnet.native.21mns4qp4i.wasm": "dotnet.native.wasm",
       "dotnet.runtime.st3wwc8rqy.js": "dotnet.runtime.js",
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat"
     },
     "jsModuleNative": {
-      "dotnet.native.9ih887ebfz.js": "sha256-oS7IRiQoVt9ThQ7Y2UM3XoeY0JqPD02cg9IvRdufn2w="
+      "dotnet.native.vmus01doem.js": "sha256-F/5e/lyR+oUxW0davFx8aANjOB+Ddu6RYx2NRUxshPw="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.st3wwc8rqy.js": "sha256-oBRKHAqZUsvCRnCzkQfB7zc45cpKLNq2NKyrG10IKx8="
     },
     "wasmNative": {
-      "dotnet.native.21mns4qp4i.wasm": "sha256-RtuwNrUOdAJ5A4aS4ZmceO4ySriaYqTdC7X++6yd9lM="
+      "dotnet.native.4e9wno4pqn.wasm": "sha256-dLFVv5asTWWMhnXfgSsbgaDPFlrYOluwyz8AHaa4gzI="
     },
     "icu": {
       "icudt_CJK.tjcz0u77k5.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -89,7 +89,7 @@
       "System.Text.Encodings.Web.08ymq1fvcr.wasm": "sha256-QPumUm/+bRPi/T+QpPMfrlCeezAnzRk6CmD/iBskgiw=",
       "System.Text.Json.coj5dfj14h.wasm": "sha256-JNTa+hz/l9OnEgXZlEjywRui9FvNkQdVcjQTuuprMuE=",
       "System.Text.RegularExpressions.3ddyst6dmo.wasm": "sha256-J0h0LpWzXEYF0E+lUOiWbLF6UobUv3nu0XKBs3nMIoQ=",
-      "XiletradeAuth.1a1l4z1pc6.wasm": "sha256-R8YeiK+idCWJugYjM/yxs/Dvb2IAexbXLiHiuR4tcsE="
+      "XiletradeAuth.verwh3vhp9.wasm": "sha256-OeAi3w2fxEazDUW/ey1AF5lmWGgPHy3/+o2MQZP2wbc="
     }
   },
   "cacheBootResources": true,
