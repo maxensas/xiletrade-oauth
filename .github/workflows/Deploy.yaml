@@ -35,6 +35,10 @@ jobs:
       - name: 📁 Copy published files to docs/
         run: |
           cp -r build/wwwroot/* docs/
+          
+      - name: 🛠 Fix <base href> in index.html
+        run: |
+          sed -i 's|<base href="/" />|<base href="/xiletrade-oauth/" />|' docs/index.html
 
       - name: 📤 Commit and push to main/docs
         run: |
