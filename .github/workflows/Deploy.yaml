@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -12,30 +13,33 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout code
+      - name: 🔍 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET SDK
+      - name: 🛠️ Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.0.x'
 
-      - name: Restore dependencies
+      - name: 📦 Restore dependencies
         run: dotnet restore ./src/XiletradeAuth.sln
 
-      - name: Build Blazor project
+      - name: 🧱 Build and publish Blazor app
         run: dotnet publish ./src/XiletradeAuth.csproj -c Release -o build
-
-      - name: Copy build output to docs/
+        
+      - name: 🧹 Clean docs folder
         run: |
           rm -rf docs
           mkdir docs
+
+      - name: 📁 Copy published files to docs/
+        run: |
           cp -r build/wwwroot/* docs/
 
-      - name: Commit and push to docs/
+      - name: 📤 Commit and push to main/docs
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add docs
-          git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"
+          git commit -m "🚀 Deploy Blazor WebAssembly to GitHub Pages" || echo "No changes to commit"
           git push origin main
