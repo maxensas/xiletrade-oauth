@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "XiletradeAuth",
   "resources": {
-    "hash": "sha256-9LzBr1Su7AWewpva09i66TB3OkTvTgnFsvQvLWtTYbU=",
+    "hash": "sha256-5ajKBaJjxdCL2WrUpjtrBVNorkhX7H12ETBaBRTtKek=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Components.5d7mktdz4k.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.8jbma652u7.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
@@ -36,7 +36,7 @@
       "System.Text.Json.sikpqtqagt.wasm": "System.Text.Json.wasm",
       "System.Text.RegularExpressions.3ddyst6dmo.wasm": "System.Text.RegularExpressions.wasm",
       "System.Private.CoreLib.s0fd6ijh7c.wasm": "System.Private.CoreLib.wasm",
-      "XiletradeAuth.8uqzl4ptqq.wasm": "XiletradeAuth.wasm",
+      "XiletradeAuth.gj451giq4a.wasm": "XiletradeAuth.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.native.9ih887ebfz.js": "dotnet.native.js",
       "dotnet.native.21mns4qp4i.wasm": "dotnet.native.wasm",
@@ -95,7 +95,7 @@
       "System.Text.Encodings.Web.08ymq1fvcr.wasm": "sha256-QPumUm/+bRPi/T+QpPMfrlCeezAnzRk6CmD/iBskgiw=",
       "System.Text.Json.sikpqtqagt.wasm": "sha256-JEIbMnFqfA0kv0ozHkBsW0wWI9Dzcrx+oyFGxnE8dHg=",
       "System.Text.RegularExpressions.3ddyst6dmo.wasm": "sha256-J0h0LpWzXEYF0E+lUOiWbLF6UobUv3nu0XKBs3nMIoQ=",
-      "XiletradeAuth.8uqzl4ptqq.wasm": "sha256-oAdmvOGkaRFRHMw4FsV8twtl4rPwSfGSqh6evlZEf00="
+      "XiletradeAuth.gj451giq4a.wasm": "sha256-xNgqrWISijGiz0b3G7WC0gUGzQ9yRjoZ5vD5wiXDsTo="
     }
   },
   "cacheBootResources": true,
