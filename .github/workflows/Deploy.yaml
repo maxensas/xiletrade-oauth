@@ -28,7 +28,7 @@ jobs:
         run: dotnet restore ./src/XiletradeAuth.sln
 
       - name: 🧱 Build and publish Blazor app
-        run: dotnet publish ./src/XiletradeAuth.csproj -c Release -o build /p:BlazorEnableCompression=false /p:StaticWebAssetsBasePath=/xiletrade-oauth/
+        run: dotnet publish ./src/XiletradeAuth.csproj -c Release -o build /p:StaticWebAssetsBasePath=/xiletrade-oauth/
         
       - name: 🧹 Clean docs folder
         run: |
