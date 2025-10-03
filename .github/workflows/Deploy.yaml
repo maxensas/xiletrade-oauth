@@ -37,10 +37,7 @@ jobs:
           cp -r build/wwwroot/* docs/
           find docs/ -name "*.br" -delete
           find docs/ -name "*.gz" -delete
-
-       - name: Add .nojekyll file to docs
-         run: |
-           touch docs/.nojekyll
+          touch docs/.nojekyll
 
       - name: Debug docs content
         run: |
