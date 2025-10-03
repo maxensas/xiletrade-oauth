@@ -15,9 +15,9 @@
     <DebugSymbols>false</DebugSymbols>
     <StripSymbols>true</StripSymbols>
     <BlazorLinkOnBuild>true</BlazorLinkOnBuild>
-    <TrimmerDefaultAction>link</TrimmerDefaultAction>
+    <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>partial</TrimMode>
-    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
     <!--<PublishTrimmed>true</PublishTrimmed>-->
     <!--
     <PublishReadyToRun>true</PublishReadyToRun>
