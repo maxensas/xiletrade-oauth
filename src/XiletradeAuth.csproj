@@ -5,9 +5,11 @@
     <OutputType>Exe</OutputType>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseHref>/xiletrade-oauth/</BaseHref>
-    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <Configuration>Release</Configuration>
+    <BaseHref>/xiletrade-oauth/</BaseHref>
+    <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
+    <!--
+    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <UseBlazorWebAssemblyAOT>true</UseBlazorWebAssemblyAOT>
     <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
     <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
@@ -17,7 +19,7 @@
     <BlazorLinkOnBuild>true</BlazorLinkOnBuild>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>partial</TrimMode>
-    <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
+    -->
     <!--
     <PublishReadyToRun>true</PublishReadyToRun>
     <InvariantGlobalization>true</InvariantGlobalization>
