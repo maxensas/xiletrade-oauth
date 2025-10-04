@@ -2,26 +2,12 @@
 @using Microsoft.AspNetCore.Components.Authorization
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @code {
-    private bool isLoading = true;
-
-    protected override async Task OnInitializedAsync()
-    {
-        var state = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        isLoading = false;
-        StateHasChanged();
-    }
-
     [Inject] NavigationManager Navigation { get; set; }
 
-    void BeginLogin()
-    {
-        Navigation.NavigateTo("authentication/login");
-    }
+    void BeginLogin() => Navigation.NavigateTo("authentication/login");
 
-    void BeginLogout()
-    {
-        Microsoft.AspNetCore.Components.WebAssembly.Authentication.NavigationManagerExtensions.NavigateToLogout(Navigation, "authentication/logout");
-    }
+    void BeginLogout() => Microsoft.AspNetCore.Components.WebAssembly
+    .Authentication.NavigationManagerExtensions.NavigateToLogout(Navigation, "authentication/logout");
 }
 <PageTitle>Home</PageTitle>
 
@@ -30,11 +16,10 @@
 Welcome to your new app.
 <hr>
 <h2>Authentication with auth0 :</h2>
-@if (isLoading)
-{
-    <p>Loading auth state…</p>
-}
 <AuthorizeView>
+    <Authorizing>
+        <p>Loading state...</p>
+    </Authorizing>
     <Authorized Context="auth">
         <span>Hello @auth.User.Identity?.Name!</span><br />
         <button @onclick="BeginLogout" class="btn btn-link">Logout</button>

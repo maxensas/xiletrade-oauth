@@ -21,6 +21,7 @@ var auth0Section = currentHost.Contains("localhost")
 builder.Services.AddOidcAuthentication(options =>
 {
     auth0Section.Bind(options.ProviderOptions);
+    options.ProviderOptions.AdditionalProviderParameters.Add("prompt", "none");
     options.ProviderOptions.ResponseType = "code"; // PKCE flow
     options.ProviderOptions.DefaultScopes.Add("openid");
     options.ProviderOptions.DefaultScopes.Add("profile");
