@@ -3,9 +3,16 @@
 <html>
 <head>
     <script>
-        const params = window.location.search;
-        const base = document.baseURI.endsWith("/") ? document.baseURI : document.baseURI + "/";
-        window.location.replace(base + params);
+        (function () {
+            const currentUrl = new URL(window.location.href);
+            const params = currentUrl.search;
+            const base = currentUrl.origin + currentUrl.pathname;
+
+            // Si l'URL actuelle est déjà exactement base + params, ne rien faire
+            if (currentUrl.href !== base + params) {
+                window.location.replace(base + params);
+            }
+        })();
     </script>
 </head>
 <body>
