@@ -1,7 +1,51 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@code {
+    private bool isLoading = true;
 
+    protected override async Task OnInitializedAsync()
+    {
+        var state = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        isLoading = false;
+        StateHasChanged();
+    }
+
+    [Inject] NavigationManager Navigation { get; set; }
+
+    void BeginLogin()
+    {
+        Navigation.NavigateTo("authentication/login");
+    }
+
+    void BeginLogout()
+    {
+        Microsoft.AspNetCore.Components.WebAssembly.Authentication.NavigationManagerExtensions.NavigateToLogout(Navigation, "authentication/logout");
+    }
+}
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+<hr>
+<h2>Authentication with auth0 :</h2>
+@if (isLoading)
+{
+    <p>Loading auth state…</p>
+}
+<AuthorizeView>
+    <Authorized Context="auth">
+        <span>Hello @auth.User.Identity?.Name!</span><br />
+        <button @onclick="BeginLogout" class="btn btn-link">Logout</button>
+        <ul>
+            @foreach (var claim in auth.User.Claims)
+            {
+                <li>@claim.Type: @claim.Value</li>
+            }
+        </ul>
+    </Authorized>
+    <NotAuthorized>
+        <button @onclick="BeginLogin" class="btn btn-link">Login</button>
+    </NotAuthorized>
+</AuthorizeView>
