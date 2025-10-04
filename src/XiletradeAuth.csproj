@@ -8,10 +8,10 @@
     <Configuration>Release</Configuration>
     <BaseHref>/xiletrade-oauth/</BaseHref>
     <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
-    
+    <!--
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>partial</TrimMode>
-    
+    -->
     <OutputType>Exe</OutputType>
     <RunAOTCompilation>true</RunAOTCompilation>
     <WasmEnableRuntimeRelinking>true</WasmEnableRuntimeRelinking>
