@@ -10,12 +10,12 @@
     <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
     
     <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>link</TrimMode>
+    <TrimMode>partial</TrimMode>
     
     <OutputType>Exe</OutputType>
     <RunAOTCompilation>true</RunAOTCompilation>
     <WasmEnableRuntimeRelinking>true</WasmEnableRuntimeRelinking>
-    
+    <!--<CompressionEnabled>false</CompressionEnabled>-->
     <!--<BlazorEnableCompression>false</BlazorEnableCompression>-->
     
     <BlazorWebAssemblyEnableDebugging>false</BlazorWebAssemblyEnableDebugging>
