@@ -10,7 +10,7 @@
     <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
     
     <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>partial</TrimMode>
+    <TrimMode>link</TrimMode>
     
     <OutputType>Exe</OutputType>
     <RunAOTCompilation>true</RunAOTCompilation>
