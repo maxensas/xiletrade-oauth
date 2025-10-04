@@ -8,17 +8,17 @@
     <Configuration>Release</Configuration>
     <BaseHref>/xiletrade-oauth/</BaseHref>
     <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
-    <!--
+
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>partial</TrimMode>
-    -->
+
     <OutputType>Exe</OutputType>
     <RunAOTCompilation>true</RunAOTCompilation>
     <WasmEnableRuntimeRelinking>true</WasmEnableRuntimeRelinking>
     <CompressionEnabled>false</CompressionEnabled>
     
     <BlazorWebAssemblyEnableDebugging>false</BlazorWebAssemblyEnableDebugging>
-    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
     
     <InvariantGlobalization>true</InvariantGlobalization>
     <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
@@ -27,8 +27,8 @@
     <DebugSymbols>false</DebugSymbols>
     <StripSymbols>true</StripSymbols>
     <BlazorLinkOnBuild>true</BlazorLinkOnBuild>
-    <!--<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>-->
     <WasmEnableExceptionHandling>false</WasmEnableExceptionHandling>
+    <!--<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>-->
   </PropertyGroup>
 
   <ItemGroup>
