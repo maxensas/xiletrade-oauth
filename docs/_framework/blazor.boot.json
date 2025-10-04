@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "XiletradeAuth",
   "resources": {
-    "hash": "sha256-vFmMPe/BKrUtsjCgb/0noudGAK14UdH+aYs0aK6sR78=",
+    "hash": "sha256-nizHe9SZWU30f3bYUfb6DtvXmcoH1rVWG4/R7bwMdgs=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.1i3sgw285x.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.b6askg7mcy.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -48,9 +48,9 @@
       "System.Text.RegularExpressions.nci05k6c78.wasm": "System.Text.RegularExpressions.wasm",
       "System.m0fu6d0eya.wasm": "System.wasm",
       "System.Private.CoreLib.80z2kwp2qb.wasm": "System.Private.CoreLib.wasm",
-      "XiletradeAuth.thx9vqkamp.wasm": "XiletradeAuth.wasm",
+      "XiletradeAuth.qrgxiwralt.wasm": "XiletradeAuth.wasm",
       "dotnet.native.85hr3bb8v5.js": "dotnet.native.js",
-      "dotnet.native.h6s8qcxhfe.wasm": "dotnet.native.wasm",
+      "dotnet.native.56jmal4rok.wasm": "dotnet.native.wasm",
       "dotnet.js": "dotnet.js",
       "dotnet.runtime.st3wwc8rqy.js": "dotnet.runtime.js"
     },
@@ -61,7 +61,7 @@
       "dotnet.runtime.st3wwc8rqy.js": "sha256-oBRKHAqZUsvCRnCzkQfB7zc45cpKLNq2NKyrG10IKx8="
     },
     "wasmNative": {
-      "dotnet.native.h6s8qcxhfe.wasm": "sha256-V2Ul+z9AGLGnAWjQQL2hE2LTf0EmPwT8PeeZmXL//Mg="
+      "dotnet.native.56jmal4rok.wasm": "sha256-czcrhWW0SVjGuznc22aGnvuh4cvX3fahxmiXpGmWs8Y="
     },
     "coreAssembly": {
       "Microsoft.AspNetCore.Authorization.1i3sgw285x.wasm": "sha256-ubDLOSV39yhoGvtZtlR3dwQW2oYm0hiZf0uideYkN6g=",
@@ -109,7 +109,7 @@
       "System.Text.RegularExpressions.nci05k6c78.wasm": "sha256-57HxVA5q6TUwgi9a7e2xqrer7Lz+Kgvc5oxsU2lY1tY=",
       "System.m0fu6d0eya.wasm": "sha256-hkGLo/MuT/FJ0Xf4XUL0D2VA4dZV532GHNB1JicxLko=",
       "System.Private.CoreLib.80z2kwp2qb.wasm": "sha256-uEGi41L37l9Mt8JY7iBGBRv4hyzJI8EkdZDoyykv5Ck=",
-      "XiletradeAuth.thx9vqkamp.wasm": "sha256-0fgr6NuF3dsymS5AE6dbUeOdbrLCUHiuYUhz2ojr6l8="
+      "XiletradeAuth.qrgxiwralt.wasm": "sha256-JtXnfH5PGfVGrcN9tHxQdN97Cd+tsl0P5wE6XMt/8Jc="
     },
     "assembly": {}
   },
