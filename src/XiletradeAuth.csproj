@@ -10,10 +10,11 @@
     <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
     <PublishTrimmed>true</PublishTrimmed>
     <RunAOTCompilation>true</RunAOTCompilation>
+    <UseBlazorWebAssemblyAOT>true</UseBlazorWebAssemblyAOT>
     <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
     <!--
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
-    <UseBlazorWebAssemblyAOT>true</UseBlazorWebAssemblyAOT>
+    
     <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
