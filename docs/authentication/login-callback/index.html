@@ -6,7 +6,7 @@
         (function () {
             const currentUrl = new URL(window.location.href);
             const params = currentUrl.search;
-            const base = currentUrl.origin + "xiletrade-oauth/";// + currentUrl.pathname;
+            const base = currentUrl.origin + "/xiletrade-oauth/";// + currentUrl.pathname;
 
             // Si l'URL actuelle est déjà exactement base + params, ne rien faire
             if (currentUrl.href !== base + params) {
