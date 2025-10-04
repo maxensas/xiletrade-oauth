@@ -38,6 +38,7 @@ jobs:
       - name: 📁 Copy published files to docs/
         run: |
           cp -r build/wwwroot/* docs/
+          touch docs/.nojekyll
 
       - name: 🛠 Fix <base href> in index + Copy to 404
         run: |
