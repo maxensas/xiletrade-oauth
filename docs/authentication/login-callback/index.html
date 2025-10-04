@@ -1,10 +1,11 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html>
 <head>
     <script>
         const params = window.location.search;
         const base = document.baseURI.endsWith("/") ? document.baseURI : document.baseURI + "/";
-        window.location.replace(base + "authentication/login-callback" + params);
+        window.location.replace(base + params);
     </script>
 </head>
 <body>
