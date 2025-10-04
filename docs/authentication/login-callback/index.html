@@ -2,7 +2,9 @@
 <html>
 <head>
     <script>
-      window.location.replace(document.baseURI);
+        const params = window.location.search;
+        const base = document.baseURI.endsWith("/") ? document.baseURI : document.baseURI + "/";
+        window.location.replace(base + "authentication/login-callback" + params);
     </script>
 </head>
 <body>
