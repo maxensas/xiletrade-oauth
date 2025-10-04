@@ -37,7 +37,7 @@ jobs:
 
       - name: 📁 Copy published files to docs/
         run: |
-          cp wwwroot/index.html wwwroot/404.html
+          cp build/wwwroot/index.html build/wwwroot/404.html
           cp -r build/wwwroot/* docs/
           find docs/ -name "*.br" -delete
           find docs/ -name "*.gz" -delete
