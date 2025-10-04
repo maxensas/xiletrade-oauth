@@ -15,8 +15,7 @@
     <OutputType>Exe</OutputType>
     <RunAOTCompilation>true</RunAOTCompilation>
     <WasmEnableRuntimeRelinking>true</WasmEnableRuntimeRelinking>
-    <!--<CompressionEnabled>false</CompressionEnabled>-->
-    <!--<BlazorEnableCompression>false</BlazorEnableCompression>-->
+    <CompressionEnabled>false</CompressionEnabled>
     
     <BlazorWebAssemblyEnableDebugging>false</BlazorWebAssemblyEnableDebugging>
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
@@ -51,7 +50,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Utils\" />
   </ItemGroup>
-
+  <!--
   <Target Name="RemoveCompressedFiles" AfterTargets="Publish">
     <ItemGroup>
       <CompressedFiles Include="$(PublishDir)**/*.gz" />
@@ -59,5 +58,5 @@
     </ItemGroup>
     <Delete Files="@(CompressedFiles)" />
   </Target>
-
+-->
 </Project>
