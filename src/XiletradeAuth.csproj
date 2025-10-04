@@ -8,26 +8,28 @@
     <Configuration>Release</Configuration>
     <BaseHref>/xiletrade-oauth/</BaseHref>
     <StaticWebAssetsBasePath>/xiletrade-oauth/</StaticWebAssetsBasePath>
-    <PublishTrimmed>true</PublishTrimmed>
-    <RunAOTCompilation>true</RunAOTCompilation>
-    <UseBlazorWebAssemblyAOT>true</UseBlazorWebAssemblyAOT>
-    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
-    <!--
-    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
+    
+    <OutputType>Exe</OutputType>
+    <RunAOTCompilation>true</RunAOTCompilation>
+    <WasmEnableRuntimeRelinking>true</WasmEnableRuntimeRelinking>
+    
+    <!--<BlazorEnableCompression>false</BlazorEnableCompression>-->
+    
+    <BlazorWebAssemblyEnableDebugging>false</BlazorWebAssemblyEnableDebugging>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
     <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <StripSymbols>true</StripSymbols>
     <BlazorLinkOnBuild>true</BlazorLinkOnBuild>
-    
-    <TrimMode>partial</TrimMode>
-    -->
-    <!--
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <InvariantGlobalization>true</InvariantGlobalization>
-    <BlazorEnableCompression>true</BlazorEnableCompression>
-    -->
+    <!--<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>-->
+    <WasmEnableExceptionHandling>false</WasmEnableExceptionHandling>
   </PropertyGroup>
 
   <ItemGroup>
@@ -49,5 +51,13 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Utils\" />
   </ItemGroup>
+
+  <Target Name="RemoveCompressedFiles" AfterTargets="Publish">
+    <ItemGroup>
+      <CompressedFiles Include="$(PublishDir)**/*.gz" />
+      <CompressedFiles Include="$(PublishDir)**/*.br" />
+    </ItemGroup>
+    <Delete Files="@(CompressedFiles)" />
+  </Target>
 
 </Project>
