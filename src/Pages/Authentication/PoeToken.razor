@@ -1,0 +1,59 @@
+﻿@page "/poe/token"
+@using System.Text.Json
+@using XiletradeAuth.Models
+@using XiletradeAuth.Services
+
+@inject PoeService PoeService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "code")]
+    public string Code { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "state")]
+    public string State { get; set; }
+
+    private string ErrorMessage { get; set; }
+    //temp
+    private string PostRequest { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        try
+        {
+            var codeVerifier = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Poe.StorageVerifier);
+            if (!Guid.TryParse(codeVerifier, out Guid parsedGuid))
+            {
+                throw new Exception("BADCODE");
+            }
+            var result = await PoeService.GetPoeTokenAsync(Code, codeVerifier);
+
+            //temp
+            Console.WriteLine($"Token: {result.Token}");
+            NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={result.Token}&expires_in={DateTimeOffset.Now}");
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+        }
+    }
+}
+
+<h1>Poe Token</h1>
+<br />
+<h3>request : </h3>
+<br />
+@PostRequest
+<br />
+@if (ErrorMessage.Length > 0)
+{
+    <p>Error message : @ErrorMessage</p>
+}
+else
+{
+    <p>Path of Exile authentication ... You will be prompted to launch Xiletrade shortly.</p>
+}

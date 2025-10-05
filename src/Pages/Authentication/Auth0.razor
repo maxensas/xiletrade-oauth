@@ -9,13 +9,13 @@
     void BeginLogout() => Microsoft.AspNetCore.Components.WebAssembly
     .Authentication.NavigationManagerExtensions.NavigateToLogout(Navigation, "authentication/logout");
 }
-<PageTitle>Home</PageTitle>
+<PageTitle>auth0 Authentication</PageTitle>
 
-<h1>Authentication example with auth0</h1>
+<h1>Authentication with auth0</h1>
 <hr>
 <AuthorizeView>
     <Authorizing>
-        <p>Loading authentication...</p>
+        <p>Loading ...</p>
     </Authorizing>
     <Authorized Context="auth">
         <span>Hello @auth.User.Identity?.Name!</span><br />

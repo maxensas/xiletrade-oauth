@@ -1,0 +1,70 @@
+﻿@page "/poe"
+@using XiletradeAuth.Models
+@using XiletradeAuth.Services
+@inject PoeService PoeService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+<PageTitle>PoE Authentication</PageTitle>
+
+<h1>Authentication with PoE</h1>
+<img src="./icon-100.png" alt="App logo" />
+<br />
+<br />
+<br />
+<h3>Token request</h3>
+@if (_token is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ul>
+        <li>Url :</li>
+    </ul>
+    @AuthUrl
+    <br />
+    <button @onclick="RequestAuth" class="btn btn-link">Send request</button>
+    <br />
+    <br />
+    <h3>Token response example</h3>
+    <ul>
+        <li>access_token : @_token.Token</li>
+        <li>expires_in : @_token.Expires</li>
+        <li>token_type : @_token.Type</li>
+        <li>scope : @_token.Scope</li>
+        <li>username : @_token.Username</li>
+        <li>sub : @_token.Sub</li>
+        <li>refresh_token : @_token.Refresh</li>
+    </ul>
+}
+
+@code {
+    private PoeResponseToken _token;
+    private PkceGenerator _pkce = new();
+    private const string AuthorizationUrl = "https://www.pathofexile.com/oauth/authorize";
+    public const string TokenUrl = "https://www.pathofexile.com/oauth/token";
+    public const string RedirectUri = "https://maxensas.github.io/xiletrade-oauth";
+    public const string ClientId = "xiletrade";
+    public const string Scope = "service:cxapi"; // https://www.pathofexile.com/developer/docs/reference#currencyexchange
+
+    private static readonly string State = Guid.NewGuid().ToString();
+
+    public const string StorageVerifier = "storage-verifier";
+
+    private string AuthUrl => $"{AuthorizationUrl}?client_id={ClientId}&response_type=code&scope={Scope}&state={State}&redirect_uri={RedirectUri}&code_challenge={_pkce.CodeChallenge}&code_challenge_method=S256";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _token = await PoeService.GetTokenAsync();
+        //RequestAuth();
+    }
+
+    protected async Task RequestAuth()
+    {
+        //TODO
+        return;
+        await JsRuntime.InvokeVoidAsync("localStorage.setItem", StorageVerifier, _pkce.CodeVerifier);
+        NavigationManager.NavigateTo(AuthUrl);
+    }
+}
