@@ -1,4 +1,4 @@
-﻿@page "/poe"
+﻿@page "/poe/test"
 @using XiletradeAuth.Models
 @using XiletradeAuth.Services
 @inject PoeService PoeService
@@ -23,6 +23,8 @@ else
         <li>Url :</li>
     </ul>
     @AuthUrl
+    <br />
+    <button @onclick="RequestAuth" class="btn btn-link">Send request</button>
     <br />
     <br />
     <h3>Token response example</h3>
@@ -55,6 +57,13 @@ else
     protected override async Task OnInitializedAsync()
     {
         _token = await PoeService.GetTokenAsync();
+        //RequestAuth();
+    }
+
+    protected async Task RequestAuth()
+    {
+        //TODO
+        return;
         await JsRuntime.InvokeVoidAsync("localStorage.setItem", StorageVerifier, _pkce.CodeVerifier);
         NavigationManager.NavigateTo(AuthUrl);
     }
