@@ -38,10 +38,4 @@ internal sealed class PkceGenerator
             .Replace("/", "_")
             .TrimEnd('=');
     }
-
-    internal void Display()
-    {
-        Console.WriteLine($"Code Verifier: {CodeVerifier}");
-        Console.WriteLine($"Code Challenge: {CodeChallenge}");
-    }
 }
