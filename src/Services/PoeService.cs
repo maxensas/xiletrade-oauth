@@ -47,4 +47,30 @@ public class PoeService
             throw; 
         }
     }
+
+    public async Task<PoeResponseToken> GetPoeTokenAsync(string secret)
+    {
+        try
+        {
+            var request = $"client_id={Poe.ClientId}&client_secret={secret}&grant_type=client_credentials&scope={Poe.Scopes}";
+            var response = await _http.PostAsync(Poe.TokenUrl, new StringContent(request));
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException("BADREQUEST");
+            }
+
+            var responseContent = await response.Content.ReadAsStreamAsync();
+            var result = await JsonSerializer.DeserializeAsync<PoeResponseToken>(responseContent);
+            if (result is null || result.Token is null)
+            {
+                throw new JsonException("NO/BAD TOKEN");
+            }
+
+            return result;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
 }

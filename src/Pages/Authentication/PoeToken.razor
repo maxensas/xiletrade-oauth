@@ -17,7 +17,7 @@
     public string State { get; set; }
 
     private string ErrorMessage { get; set; }
-    private const int TokenLifeTime = 90; // in days
+
     //temp
     private string PostRequest { get; set; }
 
@@ -25,7 +25,7 @@
     {
         await base.OnInitializedAsync();
         try
-        {
+        {         
             var codeVerifier = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Poe.StorageVerifier);
             if (!Guid.TryParse(codeVerifier, out Guid parsedGuid))
             {
@@ -34,8 +34,8 @@
             var result = await PoeService.GetPoeTokenAsync(Code, codeVerifier);
 
             //temp
-            Console.WriteLine($"Token: {result.Token}");
-            NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={result.Token}&expires_in={TokenLifeTime}");
+            //Console.WriteLine($"Token: {result.Token}");
+            NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={result.Token}&expires_in={result.Expires}");
         }
         catch (Exception e)
         {

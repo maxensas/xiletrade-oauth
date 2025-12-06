@@ -8,6 +8,7 @@ public sealed class PoeResponseToken
     public string Token { get; set; }
 
     [JsonPropertyName("expires_in")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public int Expires { get; set; }
 
     [JsonPropertyName("token_type")]
@@ -20,8 +21,10 @@ public sealed class PoeResponseToken
     public string Username { get; set; }
 
     [JsonPropertyName("sub")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string Sub { get; set; }
 
     [JsonPropertyName("refresh_token")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string Refresh { get; set; }
 }

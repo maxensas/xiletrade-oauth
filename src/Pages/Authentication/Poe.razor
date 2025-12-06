@@ -36,8 +36,22 @@ else
         <li>refresh_token : @_token.Refresh</li>
     </ul>
 }
+<br />
+@if (ErrorMessage.Length > 0)
+{
+    <p>Error message : @ErrorMessage</p>
+}
+else
+{
+    <p>You will be redirected shortly.</p>
+}
 
 @code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "secret")]
+    public string Secret { get; set; }
+
+    private string ErrorMessage { get; set; }
     private PoeResponseToken _token;
     private PkceGenerator _pkce = new();
     private const string AuthorizationUrl = "https://www.pathofexile.com/oauth/authorize";
@@ -45,18 +59,38 @@ else
     public const string RedirectUri = "https://maxensas.github.io/xiletrade-oauth/poe/token";
     public const string ClientId = "xiletrade";
     public const string Scope = "account:stashes"; // Public Clients
+    public const int TokenLifeTime = 90; // in days
+    public static string Scopes => string.Join("+", ScopeArray);
 
     private static readonly string State = Guid.NewGuid().ToString();
-    //private static readonly string[] Scopes = ["service:leagues", "service:cxapi"]; // https://www.pathofexile.com/developer/docs/reference#currencyexchange
+    private static readonly string[] ScopeArray = ["service:leagues", "service:cxapi"]; // https://www.pathofexile.com/developer/docs/reference#currencyexchange
 
     public const string StorageVerifier = "storage-verifier";
+    public const string Verysecret = "verysecret";
 
     private string AuthUrl => $"{AuthorizationUrl}?client_id={ClientId}&response_type=code&scope={Scope}&state={State}&redirect_uri={RedirectUri}&code_challenge={_pkce.CodeChallenge}&code_challenge_method=S256";
 
     protected override async Task OnInitializedAsync()
     {
-        //_token = await PoeService.GetTokenAsync();
-        await JsRuntime.InvokeVoidAsync("localStorage.setItem", StorageVerifier, _pkce.CodeVerifier);
-        NavigationManager.NavigateTo(AuthUrl);
+        await base.OnInitializedAsync();
+        try
+        {
+            if (!string.IsNullOrEmpty(Secret))
+            {
+                var result = await PoeService.GetPoeTokenAsync(Secret);
+
+                //temp
+                //Console.WriteLine($"Token: {result.Token}");
+                NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={result.Token}&expires_in={result.Expires}");
+                return;
+            }
+
+            await JsRuntime.InvokeVoidAsync("localStorage.setItem", StorageVerifier, _pkce.CodeVerifier);
+            NavigationManager.NavigateTo(AuthUrl);
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+        }
     }
 }
