@@ -72,7 +72,7 @@ public class PoeService
         }
     }
 
-    public async Task<PoeResponseToken> GetPoeTokenAsyncNew(string secret)
+    public async Task<PoeResponseToken> GetPoeTokenAsync(string secret)
     {
         try
         {
@@ -143,7 +143,7 @@ public class PoeService
         }
     }
 
-    public async Task<PoeResponseToken> GetPoeTokenAsync(string secret)
+    public async Task<PoeResponseToken> GetPoeTokenAsyncOld(string secret)
     {
         try
         {
