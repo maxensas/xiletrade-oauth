@@ -42,9 +42,9 @@ public class PoeService
 
             return result;
         }
-        catch (Exception) 
-        { 
-            throw; 
+        catch (Exception e)
+        {
+            throw new Exception("ERROR TOKEN RECOVERY", e);
         }
     }
 
@@ -68,9 +68,9 @@ public class PoeService
 
             return result;
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            throw;
+            throw new Exception("ERROR TOKEN RECOVERY", e);
         }
     }
 }
