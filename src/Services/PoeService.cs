@@ -47,7 +47,7 @@ public class PoeService
             {
                 Content = content
             };
-            request.Headers.Add("Access-Control-Allow-Origin", Poe.Origin);
+            request.Headers.Add("X-App-Identifier", Poe.Agent);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
             request.Headers.ProxyAuthorization = null;
 
@@ -93,7 +93,7 @@ public class PoeService
             {
                 Content = content
             };
-            request.Headers.Add("Access-Control-Allow-Origin", Poe.Origin);
+            request.Headers.Add("X-App-Identifier", Poe.Agent);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
             request.Headers.ProxyAuthorization = null;
 
