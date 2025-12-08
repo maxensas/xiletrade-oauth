@@ -77,11 +77,8 @@ else
         {
             if (!string.IsNullOrEmpty(Secret))
             {
-                var result = await PoeService.GetPoeTokenAsync(Secret);
-
-                //temp
-                //Console.WriteLine($"Token: {result.Token}");
-                NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={result.Token}&expires_in={result.Expires}");
+                await JsRuntime.InvokeVoidAsync("localStorage.setItem", Verysecret, Secret);
+                NavigationManager.NavigateTo("/poe/token");
                 return;
             }
 

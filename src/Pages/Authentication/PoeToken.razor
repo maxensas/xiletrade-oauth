@@ -18,37 +18,42 @@
 
     private string ErrorMessage { get; set; }
 
-    //temp
-    private string PostRequest { get; set; }
-
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
         try
         {         
+            var secret = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Poe.Verysecret);
+            if (!string.IsNullOrEmpty(secret))
+            {
+                await JsRuntime.InvokeVoidAsync("localStorage.removeItem", Poe.Verysecret);
+                var resultSecret = await PoeService.GetPoeTokenAsync(secret);
+                NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={resultSecret.Token}&expires_in={resultSecret.Expires}");
+                return;
+            }
+
             var codeVerifier = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Poe.StorageVerifier);
             if (!Guid.TryParse(codeVerifier, out Guid parsedGuid))
             {
                 throw new Exception("BADCODE");
             }
             var result = await PoeService.GetPoeTokenAsync(Code, codeVerifier);
-
+            await JsRuntime.InvokeVoidAsync("localStorage.removeItem", Poe.StorageVerifier);
             //temp
             //Console.WriteLine($"Token: {result.Token}");
             NavigationManager.NavigateTo($"Xiletrade://oauth?access_token={result.Token}&expires_in={result.Expires}");
         }
         catch (Exception e)
         {
-            ErrorMessage = e.Message;
+            ErrorMessage = e.Message + (e.InnerException?.Message?.Length > 0 
+            ? ("<br />" + e.InnerException.Message) : string.Empty);
         }
     }
 }
 
-<h1>Poe Token</h1>
+<h1>Poe Token recovery</h1>
 <br />
-<h3>request : </h3>
-<br />
-@PostRequest
+<h3>processing request</h3>
 <br />
 @if (ErrorMessage.Length > 0)
 {
