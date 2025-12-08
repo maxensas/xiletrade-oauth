@@ -5298,10 +5298,6 @@ var wasmImports = {
   /** @export */
   invoke_jii: invoke_jii,
   /** @export */
-  invoke_jiii: invoke_jiii,
-  /** @export */
-  invoke_jiiii: invoke_jiiii,
-  /** @export */
   invoke_jiiiiiiiiii: invoke_jiiiiiiiiii,
   /** @export */
   invoke_jji: invoke_jji,
@@ -5313,8 +5309,6 @@ var wasmImports = {
   invoke_vidii: invoke_vidii,
   /** @export */
   invoke_vii: invoke_vii,
-  /** @export */
-  invoke_viidi: invoke_viidi,
   /** @export */
   invoke_viii: invoke_viii,
   /** @export */
@@ -5395,8 +5389,6 @@ var wasmImports = {
   invoke_viiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii: invoke_viiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii,
   /** @export */
   invoke_viiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii: invoke_viiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii,
-  /** @export */
-  invoke_viiji: invoke_viiji,
   /** @export */
   invoke_viijiiiii: invoke_viijiiiii,
   /** @export */
@@ -5508,12 +5500,9 @@ var _mono_aot_Microsoft_AspNetCore_Components_WebAssembly_Authentication_get_met
 var _mono_aot_Microsoft_AspNetCore_Metadata_get_method = Module['_mono_aot_Microsoft_AspNetCore_Metadata_get_method'] = (a0) => (_mono_aot_Microsoft_AspNetCore_Metadata_get_method = Module['_mono_aot_Microsoft_AspNetCore_Metadata_get_method'] = wasmExports['mono_aot_Microsoft_AspNetCore_Metadata_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_Configuration_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Configuration_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Configuration_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_Configuration_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_Abstractions_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Configuration_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_Abstractions_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Configuration_Abstractions_get_method'])(a0);
-var _mono_aot_Microsoft_Extensions_Configuration_Binder_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_Binder_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Configuration_Binder_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_Binder_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Configuration_Binder_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_Configuration_Json_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_Json_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Configuration_Json_get_method = Module['_mono_aot_Microsoft_Extensions_Configuration_Json_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Configuration_Json_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_DependencyInjection_get_method = Module['_mono_aot_Microsoft_Extensions_DependencyInjection_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_DependencyInjection_get_method = Module['_mono_aot_Microsoft_Extensions_DependencyInjection_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_DependencyInjection_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_DependencyInjection_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_DependencyInjection_Abstractions_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_DependencyInjection_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_DependencyInjection_Abstractions_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_DependencyInjection_Abstractions_get_method'])(a0);
-var _mono_aot_Microsoft_Extensions_Diagnostics_get_method = Module['_mono_aot_Microsoft_Extensions_Diagnostics_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Diagnostics_get_method = Module['_mono_aot_Microsoft_Extensions_Diagnostics_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Diagnostics_get_method'])(a0);
-var _mono_aot_Microsoft_Extensions_Diagnostics_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_Diagnostics_Abstractions_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Diagnostics_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_Diagnostics_Abstractions_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Diagnostics_Abstractions_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_Logging_get_method = Module['_mono_aot_Microsoft_Extensions_Logging_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Logging_get_method = Module['_mono_aot_Microsoft_Extensions_Logging_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Logging_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_Logging_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_Logging_Abstractions_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Logging_Abstractions_get_method = Module['_mono_aot_Microsoft_Extensions_Logging_Abstractions_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Logging_Abstractions_get_method'])(a0);
 var _mono_aot_Microsoft_Extensions_Options_get_method = Module['_mono_aot_Microsoft_Extensions_Options_get_method'] = (a0) => (_mono_aot_Microsoft_Extensions_Options_get_method = Module['_mono_aot_Microsoft_Extensions_Options_get_method'] = wasmExports['mono_aot_Microsoft_Extensions_Options_get_method'])(a0);
@@ -5522,11 +5511,7 @@ var _mono_aot_Microsoft_JSInterop_get_method = Module['_mono_aot_Microsoft_JSInt
 var _mono_aot_XiletradeAuth_get_method = Module['_mono_aot_XiletradeAuth_get_method'] = (a0) => (_mono_aot_XiletradeAuth_get_method = Module['_mono_aot_XiletradeAuth_get_method'] = wasmExports['mono_aot_XiletradeAuth_get_method'])(a0);
 var _mono_aot_System_Collections_Concurrent_get_method = Module['_mono_aot_System_Collections_Concurrent_get_method'] = (a0) => (_mono_aot_System_Collections_Concurrent_get_method = Module['_mono_aot_System_Collections_Concurrent_get_method'] = wasmExports['mono_aot_System_Collections_Concurrent_get_method'])(a0);
 var _mono_aot_System_Collections_Immutable_get_method = Module['_mono_aot_System_Collections_Immutable_get_method'] = (a0) => (_mono_aot_System_Collections_Immutable_get_method = Module['_mono_aot_System_Collections_Immutable_get_method'] = wasmExports['mono_aot_System_Collections_Immutable_get_method'])(a0);
-var _mono_aot_System_Collections_NonGeneric_get_method = Module['_mono_aot_System_Collections_NonGeneric_get_method'] = (a0) => (_mono_aot_System_Collections_NonGeneric_get_method = Module['_mono_aot_System_Collections_NonGeneric_get_method'] = wasmExports['mono_aot_System_Collections_NonGeneric_get_method'])(a0);
-var _mono_aot_System_Collections_Specialized_get_method = Module['_mono_aot_System_Collections_Specialized_get_method'] = (a0) => (_mono_aot_System_Collections_Specialized_get_method = Module['_mono_aot_System_Collections_Specialized_get_method'] = wasmExports['mono_aot_System_Collections_Specialized_get_method'])(a0);
 var _mono_aot_System_Collections_get_method = Module['_mono_aot_System_Collections_get_method'] = (a0) => (_mono_aot_System_Collections_get_method = Module['_mono_aot_System_Collections_get_method'] = wasmExports['mono_aot_System_Collections_get_method'])(a0);
-var _mono_aot_System_ComponentModel_Primitives_get_method = Module['_mono_aot_System_ComponentModel_Primitives_get_method'] = (a0) => (_mono_aot_System_ComponentModel_Primitives_get_method = Module['_mono_aot_System_ComponentModel_Primitives_get_method'] = wasmExports['mono_aot_System_ComponentModel_Primitives_get_method'])(a0);
-var _mono_aot_System_ComponentModel_TypeConverter_get_method = Module['_mono_aot_System_ComponentModel_TypeConverter_get_method'] = (a0) => (_mono_aot_System_ComponentModel_TypeConverter_get_method = Module['_mono_aot_System_ComponentModel_TypeConverter_get_method'] = wasmExports['mono_aot_System_ComponentModel_TypeConverter_get_method'])(a0);
 var _mono_aot_System_ComponentModel_get_method = Module['_mono_aot_System_ComponentModel_get_method'] = (a0) => (_mono_aot_System_ComponentModel_get_method = Module['_mono_aot_System_ComponentModel_get_method'] = wasmExports['mono_aot_System_ComponentModel_get_method'])(a0);
 var _mono_aot_System_Console_get_method = Module['_mono_aot_System_Console_get_method'] = (a0) => (_mono_aot_System_Console_get_method = Module['_mono_aot_System_Console_get_method'] = wasmExports['mono_aot_System_Console_get_method'])(a0);
 var _mono_aot_System_Diagnostics_DiagnosticSource_get_method = Module['_mono_aot_System_Diagnostics_DiagnosticSource_get_method'] = (a0) => (_mono_aot_System_Diagnostics_DiagnosticSource_get_method = Module['_mono_aot_System_Diagnostics_DiagnosticSource_get_method'] = wasmExports['mono_aot_System_Diagnostics_DiagnosticSource_get_method'])(a0);
@@ -5536,7 +5521,6 @@ var _mono_aot_System_Memory_get_method = Module['_mono_aot_System_Memory_get_met
 var _mono_aot_System_Net_Http_Json_get_method = Module['_mono_aot_System_Net_Http_Json_get_method'] = (a0) => (_mono_aot_System_Net_Http_Json_get_method = Module['_mono_aot_System_Net_Http_Json_get_method'] = wasmExports['mono_aot_System_Net_Http_Json_get_method'])(a0);
 var _mono_aot_System_Net_Http_get_method = Module['_mono_aot_System_Net_Http_get_method'] = (a0) => (_mono_aot_System_Net_Http_get_method = Module['_mono_aot_System_Net_Http_get_method'] = wasmExports['mono_aot_System_Net_Http_get_method'])(a0);
 var _mono_aot_System_Net_Primitives_get_method = Module['_mono_aot_System_Net_Primitives_get_method'] = (a0) => (_mono_aot_System_Net_Primitives_get_method = Module['_mono_aot_System_Net_Primitives_get_method'] = wasmExports['mono_aot_System_Net_Primitives_get_method'])(a0);
-var _mono_aot_System_ObjectModel_get_method = Module['_mono_aot_System_ObjectModel_get_method'] = (a0) => (_mono_aot_System_ObjectModel_get_method = Module['_mono_aot_System_ObjectModel_get_method'] = wasmExports['mono_aot_System_ObjectModel_get_method'])(a0);
 var _mono_aot_System_Private_Uri_get_method = Module['_mono_aot_System_Private_Uri_get_method'] = (a0) => (_mono_aot_System_Private_Uri_get_method = Module['_mono_aot_System_Private_Uri_get_method'] = wasmExports['mono_aot_System_Private_Uri_get_method'])(a0);
 var _mono_aot_System_Runtime_InteropServices_JavaScript_get_method = Module['_mono_aot_System_Runtime_InteropServices_JavaScript_get_method'] = (a0) => (_mono_aot_System_Runtime_InteropServices_JavaScript_get_method = Module['_mono_aot_System_Runtime_InteropServices_JavaScript_get_method'] = wasmExports['mono_aot_System_Runtime_InteropServices_JavaScript_get_method'])(a0);
 var _mono_aot_System_Runtime_get_method = Module['_mono_aot_System_Runtime_get_method'] = (a0) => (_mono_aot_System_Runtime_get_method = Module['_mono_aot_System_Runtime_get_method'] = wasmExports['mono_aot_System_Runtime_get_method'])(a0);
@@ -5545,7 +5529,6 @@ var _mono_aot_System_Security_Cryptography_get_method = Module['_mono_aot_System
 var _mono_aot_System_Text_Encodings_Web_get_method = Module['_mono_aot_System_Text_Encodings_Web_get_method'] = (a0) => (_mono_aot_System_Text_Encodings_Web_get_method = Module['_mono_aot_System_Text_Encodings_Web_get_method'] = wasmExports['mono_aot_System_Text_Encodings_Web_get_method'])(a0);
 var _mono_aot_System_Text_Json_get_method = Module['_mono_aot_System_Text_Json_get_method'] = (a0) => (_mono_aot_System_Text_Json_get_method = Module['_mono_aot_System_Text_Json_get_method'] = wasmExports['mono_aot_System_Text_Json_get_method'])(a0);
 var _mono_aot_System_Text_RegularExpressions_get_method = Module['_mono_aot_System_Text_RegularExpressions_get_method'] = (a0) => (_mono_aot_System_Text_RegularExpressions_get_method = Module['_mono_aot_System_Text_RegularExpressions_get_method'] = wasmExports['mono_aot_System_Text_RegularExpressions_get_method'])(a0);
-var _mono_aot_System_get_method = Module['_mono_aot_System_get_method'] = (a0) => (_mono_aot_System_get_method = Module['_mono_aot_System_get_method'] = wasmExports['mono_aot_System_get_method'])(a0);
 var _fmodf = Module['_fmodf'] = (a0, a1) => (_fmodf = Module['_fmodf'] = wasmExports['fmodf'])(a0, a1);
 var _mono_aot_corlib_get_method = Module['_mono_aot_corlib_get_method'] = (a0) => (_mono_aot_corlib_get_method = Module['_mono_aot_corlib_get_method'] = wasmExports['mono_aot_corlib_get_method'])(a0);
 var _mono_aot_aot_instances_get_method = Module['_mono_aot_aot_instances_get_method'] = (a0) => (_mono_aot_aot_instances_get_method = Module['_mono_aot_aot_instances_get_method'] = wasmExports['mono_aot_aot_instances_get_method'])(a0);
@@ -5701,6 +5684,17 @@ var ___cxa_decrement_exception_refcount = (a0) => (___cxa_decrement_exception_re
 var ___cxa_can_catch = (a0, a1, a2) => (___cxa_can_catch = wasmExports['__cxa_can_catch'])(a0, a1, a2);
 var ___cxa_is_pointer_type = (a0) => (___cxa_is_pointer_type = wasmExports['__cxa_is_pointer_type'])(a0);
 
+function invoke_viii(index,a1,a2,a3) {
+  var sp = stackSave();
+  try {
+    getWasmTableEntry(index)(a1,a2,a3);
+  } catch(e) {
+    stackRestore(sp);
+    if (e !== e+0) throw e;
+    _setThrew(1, 0);
+  }
+}
+
 function invoke_iii(index,a1,a2) {
   var sp = stackSave();
   try {
@@ -5723,10 +5717,10 @@ function invoke_iiii(index,a1,a2,a3) {
   }
 }
 
-function invoke_vii(index,a1,a2) {
+function invoke_ii(index,a1) {
   var sp = stackSave();
   try {
-    getWasmTableEntry(index)(a1,a2);
+    return getWasmTableEntry(index)(a1);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
@@ -5756,32 +5750,10 @@ function invoke_viiii(index,a1,a2,a3,a4) {
   }
 }
 
-function invoke_viii(index,a1,a2,a3) {
+function invoke_vii(index,a1,a2) {
   var sp = stackSave();
   try {
-    getWasmTableEntry(index)(a1,a2,a3);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_v(index) {
-  var sp = stackSave();
-  try {
-    getWasmTableEntry(index)();
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_ii(index,a1) {
-  var sp = stackSave();
-  try {
-    return getWasmTableEntry(index)(a1);
+    getWasmTableEntry(index)(a1,a2);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
@@ -5800,10 +5772,10 @@ function invoke_vi(index,a1) {
   }
 }
 
-function invoke_iiiiii(index,a1,a2,a3,a4,a5) {
+function invoke_v(index) {
   var sp = stackSave();
   try {
-    return getWasmTableEntry(index)(a1,a2,a3,a4,a5);
+    getWasmTableEntry(index)();
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
@@ -5878,6 +5850,17 @@ function invoke_iiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8) {
   }
 }
 
+function invoke_iiiiii(index,a1,a2,a3,a4,a5) {
+  var sp = stackSave();
+  try {
+    return getWasmTableEntry(index)(a1,a2,a3,a4,a5);
+  } catch(e) {
+    stackRestore(sp);
+    if (e !== e+0) throw e;
+    _setThrew(1, 0);
+  }
+}
+
 function invoke_iiji(index,a1,a2,a3) {
   var sp = stackSave();
   try {
@@ -5904,28 +5887,6 @@ function invoke_viiiiii(index,a1,a2,a3,a4,a5,a6) {
   var sp = stackSave();
   try {
     getWasmTableEntry(index)(a1,a2,a3,a4,a5,a6);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_viidi(index,a1,a2,a3,a4) {
-  var sp = stackSave();
-  try {
-    getWasmTableEntry(index)(a1,a2,a3,a4);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_viiji(index,a1,a2,a3,a4) {
-  var sp = stackSave();
-  try {
-    getWasmTableEntry(index)(a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
@@ -5970,30 +5931,6 @@ function invoke_jii(index,a1,a2) {
   var sp = stackSave();
   try {
     return getWasmTableEntry(index)(a1,a2);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-    return 0n;
-  }
-}
-
-function invoke_jiii(index,a1,a2,a3) {
-  var sp = stackSave();
-  try {
-    return getWasmTableEntry(index)(a1,a2,a3);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-    return 0n;
-  }
-}
-
-function invoke_jiiii(index,a1,a2,a3,a4) {
-  var sp = stackSave();
-  try {
-    return getWasmTableEntry(index)(a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
