@@ -86,7 +86,13 @@ public class PoeService
                 , values.Select(kvp => $"{Uri.EscapeDataString(kvp.Key)}={Uri.EscapeDataString(kvp.Value)}"))
                 , Encoding.UTF8,"application/x-www-form-urlencoded");
 
-            var response = await _http.PostAsync(Poe.TokenUrl, content);
+            var request = new HttpRequestMessage(HttpMethod.Post, Poe.TokenUrl)
+            {
+                Content = content
+            };
+            request.Headers.Add("Access-Control-Allow-Origin", Poe.RedirectUri);
+
+            var response = await _http.SendAsync(request);
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException("BADREQUEST");
