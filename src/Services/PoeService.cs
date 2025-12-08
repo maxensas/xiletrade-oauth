@@ -26,17 +26,8 @@ public class PoeService
     {
         try
         {
-            //var request = $"client_id={Poe.ClientId}&grant_type=authorization_code&code={code}&redirect_uri={Poe.RedirectUri}&scope={Poe.Scope}&code_verifier={codeVerifier}";
-            var values = new Dictionary<string, string>
-            {
-                { "client_id", Poe.ClientId },
-                { "grant_type", "authorization_code" },
-                { "code", code },
-                { "redirect_uri", Poe.RedirectUri },
-                { "scope", Poe.Scopes },
-                { "code_verifier", codeVerifier }
-            };
-            var response = await _http.PostAsync(Poe.TokenUrl, new FormUrlEncodedContent(values));
+            var request = $"client_id={Poe.ClientId}&grant_type=authorization_code&code={code}&redirect_uri={Poe.RedirectUri}&scope={Poe.Scope}&code_verifier={codeVerifier}";
+            var response = await _http.PostAsync(Poe.TokenUrl, new StringContent(request));
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException("BADREQUEST");
@@ -51,9 +42,9 @@ public class PoeService
 
             return result;
         }
-        catch (Exception e)
-        {
-            throw new Exception("ERROR TOKEN RECOVERY", e);
+        catch (Exception) 
+        { 
+            throw; 
         }
     }
 
@@ -61,15 +52,8 @@ public class PoeService
     {
         try
         {
-            //var request = $"client_id={Poe.ClientId}&client_secret={secret}&grant_type=client_credentials&scope={Poe.Scopes}";
-            var values = new Dictionary<string, string>
-            {
-                { "client_id", Poe.ClientId },
-                { "client_secret", secret },
-                { "grant_type", "client_credentials" },
-                { "scope", Poe.Scopes }
-            };
-            var response = await _http.PostAsync(Poe.TokenUrl, new FormUrlEncodedContent(values));
+            var request = $"client_id={Poe.ClientId}&client_secret={secret}&grant_type=client_credentials&scope={Poe.Scopes}";
+            var response = await _http.PostAsync(Poe.TokenUrl, new StringContent(request));
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException("BADREQUEST");
@@ -84,9 +68,9 @@ public class PoeService
 
             return result;
         }
-        catch (Exception e)
+        catch (Exception)
         {
-            throw new Exception("ERROR TOKEN RECOVERY", e);
+            throw;
         }
     }
 }
