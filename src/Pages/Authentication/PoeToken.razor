@@ -18,17 +18,12 @@
 
     private string ErrorMessage { get; set; }
 
-    private string Test { get; set; }
-    private string TestTwo { get; set; }
-
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
         try
         {         
-
             var secret = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Poe.Verysecret);
-            Test = secret;
             if (!string.IsNullOrEmpty(secret))
             {
                 await JsRuntime.InvokeVoidAsync("localStorage.removeItem", Poe.Verysecret);
@@ -38,7 +33,6 @@
             }
 
             var codeVerifier = await JsRuntime.InvokeAsync<string>("localStorage.getItem", Poe.StorageVerifier);
-            TestTwo = codeVerifier;
             if (!Guid.TryParse(codeVerifier, out Guid parsedGuid))
             {
                 throw new Exception("BADCODE");
@@ -61,8 +55,6 @@
 <br />
 <h3>processing request</h3>
 <br />
-<p>Test1: @Test</p>
-<p>Test2: @TestTwo</p>
 @if (ErrorMessage.Length > 0)
 {
     <p>Error message : @ErrorMessage</p>
