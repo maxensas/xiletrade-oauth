@@ -1,23 +1,25 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using System.Net.Http.Headers;
 using XiletradeAuth;
 using XiletradeAuth.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
-
+/*
 builder.Services.AddScoped(sp => {
     var client = new HttpClient
     {
         BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
     };
-    //client.DefaultRequestHeaders.Accept.Clear();
-    //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    client.DefaultRequestHeaders.Accept.Clear();
+    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     client.DefaultRequestHeaders.Add("X-Client-Agent", "OAuth Xiletrade-oauth/1.0 (contact: xiletrade@gmail.com)");
     return client;
-});
+});*/
+builder.Services.AddScoped(sp => new HttpClient{ BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)});
 builder.Services.AddScoped<WeatherService>().AddScoped<PoeService>();
 /*
 var navManager = builder.Services.BuildServiceProvider().GetRequiredService<NavigationManager>();
