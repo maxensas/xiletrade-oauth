@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using System.Net.Http.Headers;
 using XiletradeAuth;
 using XiletradeAuth.Services;
 
@@ -14,13 +13,13 @@ builder.Services.AddScoped(sp => {
     {
         BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
     };
-    client.DefaultRequestHeaders.Accept.Clear();
-    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    //client.DefaultRequestHeaders.Accept.Clear();
+    //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     client.DefaultRequestHeaders.Add("X-Client-Agent", "OAuth Xiletrade-oauth/1.0 (contact: xiletrade@gmail.com)");
     return client;
 });
 builder.Services.AddScoped<WeatherService>().AddScoped<PoeService>();
-
+/*
 var navManager = builder.Services.BuildServiceProvider().GetRequiredService<NavigationManager>();
 var baseUri = new Uri(navManager.BaseUri);
 var currentHost = baseUri.Host;
@@ -40,5 +39,5 @@ builder.Services.AddOidcAuthentication(options =>
     options.AuthenticationPaths.LogOutCallbackPath = "/authentication/logout-callback";
     options.AuthenticationPaths.LogOutFailedPath = "/authentication/logout-failed";
 });
-
+*/
 await builder.Build().RunAsync();
