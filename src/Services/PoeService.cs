@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using XiletradeAuth.Models;
@@ -46,7 +47,9 @@ public class PoeService
             {
                 Content = content
             };
-            request.Headers.Add("Access-Control-Allow-Origin", Poe.RedirectUri);
+            request.Headers.Add("Access-Control-Allow-Origin", Poe.Origin);
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+            request.Headers.ProxyAuthorization = null;
 
             var response = await _http.SendAsync(request);
             if (!response.IsSuccessStatusCode)
@@ -90,7 +93,9 @@ public class PoeService
             {
                 Content = content
             };
-            request.Headers.Add("Access-Control-Allow-Origin", Poe.RedirectUri);
+            request.Headers.Add("Access-Control-Allow-Origin", Poe.Origin);
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+            request.Headers.ProxyAuthorization = null;
 
             var response = await _http.SendAsync(request);
             if (!response.IsSuccessStatusCode)
