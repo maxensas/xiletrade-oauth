@@ -72,14 +72,10 @@ public class PoeService
         }
     }
 
-    public async Task<PoeResponseToken> GetPoeTokenAsync(string secret)
+    public async Task<PoeResponseToken> GetPoeTokenAsyncNew(string secret)
     {
         try
         {
-            var request1 = $"client_id={Poe.ClientId}&client_secret={secret}&grant_type=client_credentials&scope={Poe.Scopes}";
-            
-            var response = await _http.PostAsync(Poe.TokenUrl, new StringContent(request1));
-            /*
             var values = new Dictionary<string, string>
             {
                 { "client_id", Poe.ClientId },
@@ -100,7 +96,7 @@ public class PoeService
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
             request.Headers.ProxyAuthorization = null;
 
-            var response = await _http.SendAsync(request);*/
+            var response = await _http.SendAsync(request);
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException("BADREQUEST");
@@ -147,7 +143,7 @@ public class PoeService
         }
     }
 
-    public async Task<PoeResponseToken> GetPoeTokenAsyncOld(string secret)
+    public async Task<PoeResponseToken> GetPoeTokenAsync(string secret)
     {
         try
         {
