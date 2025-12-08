@@ -78,7 +78,7 @@ else
             if (!string.IsNullOrEmpty(Secret))
             {
                 await JsRuntime.InvokeVoidAsync("localStorage.setItem", Verysecret, Secret);
-                NavigationManager.NavigateTo("/poe/token");
+                NavigationManager.NavigateTo(RedirectUri);
                 return;
             }
 
