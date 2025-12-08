@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using XiletradeAuth.Models;
 using XiletradeAuth.Pages.Authentication;
@@ -35,8 +36,13 @@ public class PoeService
                 { "redirect_uri", Poe.RedirectUri },
                 { "scope", Poe.Scopes },
                 { "code_verifier", codeVerifier }
-            };
-            var response = await _http.PostAsync(Poe.TokenUrl, new FormUrlEncodedContent(values));
+            };// new FormUrlEncodedContent(values)
+
+            var content = new StringContent(string.Join("&"
+                , values.Select(kvp => $"{Uri.EscapeDataString(kvp.Key)}={Uri.EscapeDataString(kvp.Value)}"))
+                , Encoding.UTF8, "application/x-www-form-urlencoded");
+
+            var response = await _http.PostAsync(Poe.TokenUrl, content);
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException("BADREQUEST");
@@ -68,8 +74,13 @@ public class PoeService
                 { "client_secret", secret },
                 { "grant_type", "client_credentials" },
                 { "scope", Poe.Scopes }
-            };
-            var response = await _http.PostAsync(Poe.TokenUrl, new FormUrlEncodedContent(values));
+            }; //new FormUrlEncodedContent(values)
+
+            var content = new StringContent(string.Join("&"
+                , values.Select(kvp => $"{Uri.EscapeDataString(kvp.Key)}={Uri.EscapeDataString(kvp.Value)}"))
+                , Encoding.UTF8,"application/x-www-form-urlencoded");
+
+            var response = await _http.PostAsync(Poe.TokenUrl, content);
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException("BADREQUEST");
